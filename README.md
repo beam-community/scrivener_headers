@@ -1,9 +1,9 @@
 # Scrivener.Headers
 
-[![Build Status][travis-img]][travis] [![Hex Version][hex-img]][hex] [![Hex docs][hexdocs-img]][hexdocs] [![License][license-img]][license]
+[![Build][github-img]][github] [![Hex Version][hex-img]][hex] [![Hex docs][hexdocs-img]][hexdocs] [![License][license-img]][license]
 
-[travis-img]: https://travis-ci.org/beam-community/scrivener_headers.png?branch=master
-[travis]: https://travis-ci.org/beam-community/scrivener_headers
+[github-img]: https://github.com/beam-community/scrivener_headers/actions/workflows/ci.yml/badge.svg
+[github]: https://github.com/beam-community/scrivener_headers/actions/workflows/ci.yml
 [hex-img]: https://img.shields.io/hexpm/v/scrivener_headers.svg
 [hex]: https://hex.pm/packages/scrivener_headers
 [license-img]: http://img.shields.io/badge/license-MIT-brightgreen.svg
