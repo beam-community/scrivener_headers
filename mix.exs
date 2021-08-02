@@ -1,27 +1,30 @@
 defmodule Scrivener.Headers.Mixfile do
   use Mix.Project
 
+  @source_url "https://github.com/beam-community/scrivener_headers"
+
   def project do
     [
       app: :scrivener_headers,
       version: version(),
       elixir: "~> 1.4",
-      package: package(),
-      description: """
-      Helpers for paginating API responses with Scrivener and HTTP headers
-      """,
       build_embedded: Mix.env() == :prod,
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      package: package(),
+      deps: deps(),
+      docs: docs()
     ]
   end
 
   def package do
     [
+      description: "Helpers for paginating API responses with Scrivener and HTTP headers",
       maintainers: ["Sean Callan"],
       files: ["lib", "mix.exs", "README*", "LICENSE*", "VERSION"],
       licenses: ["MIT"],
-      links: %{github: "https://github.com/beam-community/scrivener_headers"}
+      links: %{
+        GitHub: @source_url
+      }
     ]
   end
 
@@ -34,7 +37,19 @@ defmodule Scrivener.Headers.Mixfile do
       {:plug, "~> 1.12", optional: true},
       {:scrivener, "~> 2.7"},
       {:credo, "~> 1.5", only: [:dev, :test]},
-      {:ex_doc, "~> 0.19", only: :dev}
+      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false}
+    ]
+  end
+
+  defp docs do
+    [
+      extras: [
+        "LICENSE.md": [title: "License"],
+        "README.md": [title: "Overview"]
+      ],
+      main: "readme",
+      source_url: @source_url,
+      formatters: ["html"]
     ]
   end
 

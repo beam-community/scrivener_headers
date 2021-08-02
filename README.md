@@ -1,36 +1,31 @@
 # Scrivener.Headers
 
-[![Build][github-img]][github] [![Hex Version][hex-img]][hex] [![Hex docs][hexdocs-img]][hexdocs] [![License][license-img]][license]
-
-[github-img]: https://github.com/beam-community/scrivener_headers/actions/workflows/ci.yml/badge.svg
-[github]: https://github.com/beam-community/scrivener_headers/actions/workflows/ci.yml
-[hex-img]: https://img.shields.io/hexpm/v/scrivener_headers.svg
-[hex]: https://hex.pm/packages/scrivener_headers
-[license-img]: http://img.shields.io/badge/license-MIT-brightgreen.svg
-[license]: http://opensource.org/licenses/MIT
-[hexdocs-img]: http://img.shields.io/badge/hex-docs-green.svg?style=flat
-[hexdocs]: https://hexdocs.pm/scrivener_headers/Scrivener.Headers.html
-
+[![Continuous Integration](https://github.com/beam-community/scrivener_headers/actions/workflows/ci.yml/badge.svg)](https://github.com/beam-community/scrivener_headers/actions/workflows/ci.yml)
+[![Module Version](https://img.shields.io/hexpm/v/scrivener_headers.svg)](https://hex.pm/packages/scrivener_headers)
+[![Hex Docs](https://img.shields.io/badge/hex-docs-lightgreen.svg)](https://hexdocs.pm/scrivener_headers/)
+[![Total Download](https://img.shields.io/hexpm/dt/scrivener_headers.svg)](https://hex.pm/packages/scrivener_headers)
+[![License](https://img.shields.io/hexpm/l/scrivener_headers.svg)](https://github.com/beam-community/scrivener_headers/blob/master/LICENSE.md)
+[![Last Updated](https://img.shields.io/github/last-commit/beam-community/scrivener_headers.svg)](https://github.com/beam-community/scrivener_headers/commits/master)
 
 Helpers for paginating API responses with [Scrivener](https://github.com/drewolson/scrivener) and HTTP headers.  Implements [RFC-5988](https://tools.ietf.org/html/rfc5988), the proposed standard for Web linking.
 
 ## Setup
 
-Add to `mix.exs`:
+Add `:scrivener_headers` to `mix.exs`:
 
 ```elixir
-  defp deps do
-    [
-      # ...
-      {:scrivener_headers, "~> 3.2"}
-      # ...
-    ]
-  end
+defp deps do
+  [
+    # ...
+    {:scrivener_headers, "~> 3.2"}
+    # ...
+  ]
+end
 ```
 
 ## Usage
 
-With `paginate/2` we can easily set our pagination headers:
+With `Scrivener.Headers.paginate/2` we can easily set our pagination headers:
 
 ```elixir
 def index(conn, params) do
@@ -61,7 +56,7 @@ Per-Page: 10
 
 ### Using Custom Header Names
 
-Override any number of pagination header names by passing opts with a `header_keys` keyword list like so:
+Override any number of pagination header names by passing opts with a `:header_keys` keyword list like so:
 
 ```elixir
 Screenever.Headers.paginate(page,
@@ -85,8 +80,8 @@ should have test coverage.
 [pulls]: https://github.com/beam-community/scrivener_headers/pulls
 
 
-## License
+## Copyright and License
 
-MIT license. Please see [LICENSE][license] for details.
+Copyright (c) 2016 Sean Callan
 
-[LICENSE]: https://github.com/beam-community/scrivener_headers/blob/master/LICENSE
+Released under the [MIT License](./LICENSE.md).
