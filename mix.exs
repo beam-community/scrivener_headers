@@ -20,7 +20,7 @@ defmodule Scrivener.Headers.Mixfile do
     [
       description: "Helpers for paginating API responses with Scrivener and HTTP headers",
       maintainers: ["Sean Callan"],
-      files: ["lib", "mix.exs", "README*", "LICENSE*", "VERSION"],
+      files: ["lib", "mix.exs", "README*", "LICENSE*"],
       licenses: ["MIT"],
       links: %{
         GitHub: @source_url
