@@ -32,7 +32,10 @@ defmodule Scrivener.Headers.Mixfile do
     [
       {:plug, "~> 1.12"},
       {:scrivener, "~> 2.7"},
+
+      # Dev & Test Dependencies
       {:credo, "~> 1.5", only: [:dev, :test]},
+      {:dialyxir, "~> 1.0", only: [:dev, :test], runtime: false},
       {:ex_doc, ">= 0.0.0", only: :dev, runtime: false}
     ]
   end
