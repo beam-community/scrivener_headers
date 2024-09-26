@@ -6,7 +6,7 @@ defmodule Scrivener.Headers.Mixfile do
   def project do
     [
       app: :scrivener_headers,
-      version: "3.2.2",
+      version: "3.1.1",
       elixir: "~> 1.4",
       build_embedded: Mix.env() == :prod,
       start_permanent: Mix.env() == :prod,
