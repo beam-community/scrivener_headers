@@ -97,9 +97,7 @@ defmodule Scrivener.Headers do
       |> Map.put("page", page_number)
       |> URI.encode_query()
 
-    uri_str =
-      %URI{uri | query: query}
-      |> URI.to_string()
+    uri_str = URI.to_string(%URI{uri | query: query})
 
     ~s(<#{uri_str}>; rel="#{rel}")
   end

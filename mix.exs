@@ -6,7 +6,7 @@ defmodule Scrivener.Headers.Mixfile do
   def project do
     [
       app: :scrivener_headers,
-      version: version(),
+      version: "3.2.2",
       elixir: "~> 1.4",
       build_embedded: Mix.env() == :prod,
       start_permanent: Mix.env() == :prod,
@@ -28,13 +28,9 @@ defmodule Scrivener.Headers.Mixfile do
     ]
   end
 
-  def application do
-    [applications: []]
-  end
-
   defp deps do
     [
-      {:plug, "~> 1.12", optional: true},
+      {:plug, "~> 1.12"},
       {:scrivener, "~> 2.7"},
       {:credo, "~> 1.5", only: [:dev, :test]},
       {:ex_doc, ">= 0.0.0", only: :dev, runtime: false}
@@ -51,11 +47,5 @@ defmodule Scrivener.Headers.Mixfile do
       source_url: @source_url,
       formatters: ["html"]
     ]
-  end
-
-  defp version do
-    "VERSION"
-    |> File.read!()
-    |> String.trim()
   end
 end

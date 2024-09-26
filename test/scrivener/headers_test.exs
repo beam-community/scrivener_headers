@@ -1,23 +1,20 @@
 defmodule Scrivener.HeadersTests do
   use ExUnit.Case, async: true
+  use Plug.Test
 
-  alias Plug.Conn
   alias Scrivener.{Headers, Page}
 
   defp paginated_headers(page, port \\ 80, opts \\ [], headers \\ []) do
-    conn =
-      %Conn{
-        host: "www.example.com",
-        port: port,
-        query_string: "foo=bar",
-        request_path: "/test",
-        scheme: :http,
-        req_headers: headers
-      }
-      |> Headers.paginate(page, opts)
-
-    conn.resp_headers
-    |> Enum.into(%{})
+    %Plug.Conn{
+      host: "www.example.com",
+      port: port,
+      query_string: "foo=bar",
+      req_headers: headers,
+      request_path: "/test",
+      scheme: :http
+    }
+    |> Headers.paginate(page, opts)
+    |> then(&Enum.into(&1.resp_headers, %{}))
   end
 
   test "add pagination headers" do
