@@ -1,6 +1,6 @@
 # Scrivener.Headers
 
-[![Continuous Integration](https://github.com/beam-community/scrivener_headers/actions/workflows/ci.yml/badge.svg)](https://github.com/beam-community/scrivener_headers/actions/workflows/ci.yml)
+[![Continuous Integration](https://github.com/beam-community/scrivener_headers/actions/workflows/ci.yaml/badge.svg)](https://github.com/beam-community/scrivener_headers/actions/workflows/ci.yaml)
 [![Module Version](https://img.shields.io/hexpm/v/scrivener_headers.svg)](https://hex.pm/packages/scrivener_headers)
 [![Hex Docs](https://img.shields.io/badge/hex-docs-lightgreen.svg)](https://hexdocs.pm/scrivener_headers/)
 [![Total Download](https://img.shields.io/hexpm/dt/scrivener_headers.svg)](https://hex.pm/packages/scrivener_headers)
