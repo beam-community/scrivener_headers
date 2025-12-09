@@ -90,7 +90,7 @@ defmodule Scrivener.Headers do
     |> Enum.join(", ")
   end
 
-  defp link_str(%{query: req_query} = uri, page_number, rel) do
+  defp link_str(%URI{query: req_query} = uri, page_number, rel) do
     query =
       req_query
       |> URI.decode_query()
