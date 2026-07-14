@@ -100,6 +100,8 @@ jobs:
         run: mix format --check-formatted
 
   Test:
+    name: Test (Elixir ${{ matrix.versions.elixir }} OTP ${{ matrix.versions.otp }})
+
     runs-on: ubuntu-latest
 
     env:
@@ -112,9 +114,9 @@ jobs:
       - name: Setup Elixir
         uses: erlef/setup-beam@54075bcc5e249e4758d363f27d099f55d843f124 # v1.24.1
         with:
-          elixir-version: "1.19"
+          elixir-version: ${{ matrix.versions.elixir }}
           github-token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
-          otp-version: "27.0"
+          otp-version: ${{ matrix.versions.otp }}
 
       - run: mix deps.get
 
@@ -123,4 +125,15 @@ jobs:
 
       - name: Test
         run: mix test
+
+    strategy:
+      fail-fast: false
+      matrix:
+        versions:
+          - elixir: 1.17
+            otp: 27
+          - elixir: 1.18
+            otp: 27
+          - elixir: 1.19
+            otp: 27
 
